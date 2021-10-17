@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 14</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color:cadetblue;
+    }
+    .counter{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .counter div.heading h1{
+        font-size: 50px;
+        color: blue;
+    }
+    .counter div.buttons{
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+    }
+    .counter div.buttons button{
+        font-size: 30px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        border: 2px solid blue;
+        box-shadow: 2px 2px 2px blue;
+    }
+    .counter div.buttons #count{
+        font-size: 30px;
+    }
+    .counter div.buttons button#btn1{
+        margin-right: 50px;
+        padding: 10px 20px;
+    }
+    .counter div.buttons button#btn2{
+        margin-left: 50px;
+        padding: 10px 18px;
+    }
+    .counter div.buttons button:hover{
+        background-color: orange;
+        box-shadow: 3px 3px 3px blue;
+        /* border: 2px solid orangered; */
+    }
+</style>
+
+
+
+<body>
+    <div class="counter">
+        <div class="heading">
+            <h1>COUNTER</h1>
+        </div>
+        <div class="buttons">
+            <button onclick="sub()" id="btn1">-</button>
+            <div id="count">0</div>
+            <button onclick="add()" id="btn2">+</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        let a = document.getElementById("count");
+        let count = 0;
+        function add(){
+            count++;
+            a.innerHTML=count;
+        }
+        function sub(){
+            if(a.innerText<=0){
+                a.innerHTML=0;
+            }else{
+                count--;
+                a.innerHTML=count;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
